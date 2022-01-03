@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="flip-panel demo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="module" defer src="../src/index.js" ></script>
+
+  <!-- demonstrate use of css style -->
+  <style>
+    flip-panel>* { color: green; padding: 20px; height: 100px; }
+    .highlight { color: red; }
+    x-card:first-child { background-color: lightgrey; }
+    x-card:nth-of-type(2) { background-color: grey; }
+  </style>
+
+</head>
+
+  <p>To flip, run</p>
+  <pre>document.getElementsByTagName('flip-panel')[0].flip()</pre>
+  <p>in the console, or click <button onclick="document.getElementsByTagName('flip-panel')[0].flip()">flip</button>
+
+  <p>Style set as an attribute to the flip-panel element is inherited; however style set in css must apply to flip-panel>*</p>
+
+  <!-- demonstrate use of custom element with inline style -->
+  <flip-panel style="border: solid 1px black" >
+    <x-card><span class="highlight">front</span> text (could be other stuff as well)</x-card>
+    <x-card><span class="highlight">back</span> text (could be other stuff as well)</x-card>
+  </flip-panel>
+
+</body>
+</html>

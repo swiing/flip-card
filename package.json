@@ -20,6 +20,10 @@
     "style": "prettier src/**/*.js --write",
     "style:check": "prettier src/**/*.js --check"
   },
+  "directories": {
+    "example": "./example",
+    "src": "./src"
+  },
   "devDependencies": {
     "eslint": "8.5.0",
     "eslint-config-airbnb-base": "15.0.0",
