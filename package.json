@@ -2,10 +2,8 @@
   "name": "flip-panel",
   "version": "0.0.1",
   "description": "A flipping panel web component",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/swiing/flip-panel.git"
-  },
+  "license": "ISC",
+  "author": "swiing",
   "keywords": [
     "flip",
     "panel",
@@ -13,13 +11,13 @@
     "custom element",
     "html"
   ],
-  "author": "swiing",
-  "license": "ISC",
+  "module": "./src/flip-panel.js",
   "scripts": {
     "lint": "eslint src/**/*.js",
     "style": "prettier src/**/*.js --write",
     "style:check": "prettier src/**/*.js --check"
   },
+  "repository": "github:swiing/flip-panel.git",
   "directories": {
     "example": "./example",
     "src": "./src"
