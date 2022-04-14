@@ -13,6 +13,7 @@
   ],
   "module": "./src/flip-panel.js",
   "scripts": {
+    "build": "rollup -c",
     "lint": "eslint src/**/*.js",
     "style": "prettier src/**/*.js --write",
     "style:check": "prettier src/**/*.js --check"
@@ -26,6 +27,8 @@
     "eslint": "8.5.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "rollup": "^2.70.1",
+    "rollup-plugin-import-assertions": "^0.3.0"
   }
 }

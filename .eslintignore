@@ -1,2 +1,3 @@
-#
+# eslint cannot parse assert imports.
 src/index.js
+dist

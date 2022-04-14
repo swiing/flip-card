@@ -7,12 +7,17 @@
   <meta name="description" content="flip-panel demo">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="module" defer src="../src/index.js" ></script>
+  <script type="module" defer src="../dist/index.js" ></script>
 
   <!-- demonstrate use of css style -->
   <style>
-    flip-panel>* { color: green; padding: 20px; height: 100px; }
+    flip-panel { background-color: lightgrey; height: 100px; }
+    front-face { background: lightgreen; }
+    back-face { background: lightgoldenrodyellow; }
+
+    __flip-panel>* { color: green; padding: 20px; height: 100px; }
     .highlight { color: red; }
+    x-card { display: block; margin: auto}
     x-card:first-child { background-color: lightgrey; }
     x-card:nth-of-type(2) { background-color: grey; }
   </style>
@@ -27,8 +32,8 @@
 
   <!-- demonstrate use of custom element with inline style -->
   <flip-panel style="border: solid 1px black" >
-    <x-card><span class="highlight">front</span> text (could be other stuff as well)</x-card>
-    <x-card><span class="highlight">back</span> text (could be other stuff as well)</x-card>
+    <front-face><span class="highlight">front</span> text (could be other stuff as well)</front-face>
+    <back-face><span class="highlight">back</span> text (could be other stuff as well)</back-face>
   </flip-panel>
 
 </body>
