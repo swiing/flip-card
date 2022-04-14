@@ -1,79 +1,26 @@
-/* SPDX-License-Identifier: ISC */
+flip-panel { display: block; perspective: 1000px; }
 
-body {
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-}
-
-div[is="flipper"] {
-  width: 100%;
+[is=flipper] { display: block;
   position: relative;
-  z-index: 0;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  display: flex;
-  flex-direction: column;
-}
-
-div[is="flipper"] x-card {
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
   transform-style: preserve-3d;
-  /*overflow: auto;remove to show buttons shadow*/
-  overflow: visible; /* for some reason it happens to display a scroll bar otherwise (e.g. when including a chart) */
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-
-  /* needed otherwise black background */
-  /* background-color: rgba(255,255,255,0); */
-
-  display: block;
+  transform-origin: center right;
+  transition: transform 1s;
 }
 
-div[is="flipper"] x-card:nth-of-type(1) {
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-  z-index: 2;
-
+[is=flipper].flipped {
+  transform: translateX(-100%) rotateY(-180deg);
 }
 
-div[is="flipper"] x-card:nth-of-type(2) {
-  -webkit-transform: rotateY(-179deg);
-  transform: rotateY(-179deg);
-  z-index: 1;
-  /* same comment as below */
-  opacity: 0;
+front-face, back-face { display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 
-div[is="flipper"].flipped x-card:nth-of-type(1) {
-  -webkit-transform: rotateY(180deg);
+back-face {
   transform: rotateY(180deg);
-  z-index: 1;
-  /* backface-visibility seems to be to some extent broken in Chrome. So make
-      sure the backface is not visible when flipped. See http://stackoverflow.com
-      /questions/10355564/backface-visibility-broken-in-chrome-certain-platforms-versions */
-  opacity: 0;
-}
-
-div[is="flipper"].flipped x-card:nth-of-type(2) {
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-  z-index: 2;
-  /* restore visibility when flipped */
-  opacity: 1;
-}
-
-.hidden {
-  display: none!important;
-}
-
-flip-panel {
-  display: flex;
 }
