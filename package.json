@@ -1,24 +1,24 @@
 {
-  "name": "flip-panel",
+  "name": "flip-card",
   "version": "0.0.1",
-  "description": "A flipping panel web component",
+  "description": "A flipping card web component",
   "license": "ISC",
   "author": "swiing",
   "keywords": [
     "flip",
-    "panel",
+    "card",
     "web component",
     "custom element",
     "html"
   ],
-  "module": "./src/flip-panel.js",
+  "module": "./src/flip-card.js",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src/**/*.js",
     "style": "prettier src/**/*.js --write",
     "style:check": "prettier src/**/*.js --check"
   },
-  "repository": "github:swiing/flip-panel.git",
+  "repository": "github:swiing/flip-card.git",
   "directories": {
     "example": "./example",
     "src": "./src"

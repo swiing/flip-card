@@ -1,4 +1,4 @@
-flip-panel { display: block; perspective: 1000px; }
+flip-card { display: block; perspective: 1000px; }
 
 [is=flipper] { display: block;
   position: relative;

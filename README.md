@@ -1,1 +1,1 @@
-A flipping panel [web component](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
+A flipping card [web component](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
