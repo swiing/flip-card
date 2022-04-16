@@ -11,7 +11,8 @@
     "custom element",
     "html"
   ],
-  "module": "./src/flip-card.js",
+  "browser": "./src/index.js",
+  "module": "./src/index.js",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src/**/*.js",
