@@ -4,7 +4,6 @@ flip-card { display: block; perspective: 1000px; }
   position: relative;
   width: 100%;
   height: 100%;
-  cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
