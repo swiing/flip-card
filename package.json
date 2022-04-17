@@ -17,6 +17,7 @@
   "scripts": {
     "build": "tsc && rollup -c",
     "lint": "eslint src/**/*.js",
+    "prepare": "npm run build",
     "style": "prettier src/**/*.js --write",
     "style:check": "prettier src/**/*.js --check"
   },
