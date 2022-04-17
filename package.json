@@ -11,6 +11,7 @@
     "custom element",
     "html"
   ],
+  "type": "module",
   "browser": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "out/index.d.ts",
