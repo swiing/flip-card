@@ -1,8 +1,19 @@
-// SPDX-License-Identifier: ISC
+// SPDX-License-Identifier: MIT
 
-export default class extends HTMLElement {
-  // Don't add children in constructor, hence prefer connectedCallback as per
-  // https://stackoverflow.com/a/40181684
+import sheet from '../src/style.css' assert { type: 'css' };
+
+// adoptedStyleSheets not supported yet by typescript
+type NodeExtend = Node & {adoptedStyleSheets: CSSStyleSheet[]}
+
+export default class FlipCardElement extends HTMLElement {
+  constructor() {
+    super();
+
+    const root = this.getRootNode() as NodeExtend;
+    if (!root.adoptedStyleSheets.includes(sheet))
+      root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet];
+  }
+
   connectedCallback() {
     const content = document
       .createRange()
@@ -10,20 +21,20 @@ export default class extends HTMLElement {
 
     // populate the template with children from the custom element
     while (this.firstElementChild) {
-      content
-        .querySelector('[is=flipper]')
+      content!
+        .querySelector('[is=flipper]')!
         .appendChild(this.removeChild(this.firstElementChild));
     }
 
     // make back-side unfocusable (un-tab-able)
-    content.querySelector('back-face').classList.toggle('hidden');
+    content.querySelector('back-face')!.classList.toggle('hidden');
 
     this.appendChild(content);
   }
 
   flip() {
     const flipper = this.querySelector('[is=flipper]');
-    flipper.classList.toggle('flipped');
+    flipper!.classList.toggle('flipped');
     // setTimeout(() => {
     //   // hide element so that it does not get focus (e.g. with tabindex)
     //   flipper
@@ -38,4 +49,8 @@ export default class extends HTMLElement {
     //   // and use it both in the (string) css, and here.
     // }, 1000);
   }
+}
+
+if (!window.customElements.get('flip-card')) {
+  window.customElements.define('flip-card', FlipCardElement)
 }

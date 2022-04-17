@@ -1,7 +1,7 @@
 import importAssertions from 'rollup-plugin-import-assertions';
 
 export default {
-  input: 'src/index.js',
+  input: 'out/index.js',
   output: {
     dir: 'dist',
     format: 'es'

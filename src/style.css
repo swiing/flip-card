@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: MIT */
+
 flip-card { display: block; perspective: 1000px; }
 
 [is=flipper] { display: block;
