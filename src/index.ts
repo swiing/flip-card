@@ -6,14 +6,6 @@ import sheet from '../src/style.css' assert { type: 'css' };
 type NodeExtend = Node & {adoptedStyleSheets: CSSStyleSheet[]}
 
 export default class FlipCardElement extends HTMLElement {
-  constructor() {
-    super();
-
-    const root = this.getRootNode() as NodeExtend;
-    if (!root.adoptedStyleSheets.includes(sheet))
-      root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet];
-  }
-
   connectedCallback() {
     const content = document
       .createRange()
@@ -30,6 +22,10 @@ export default class FlipCardElement extends HTMLElement {
     content.querySelector('back-face')!.classList.toggle('hidden');
 
     this.appendChild(content);
+
+    const root = this.getRootNode() as NodeExtend;
+    if (!root.adoptedStyleSheets.includes(sheet))
+      root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet];
   }
 
   flip() {
