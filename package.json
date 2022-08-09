@@ -14,7 +14,7 @@
   "type": "module",
   "browser": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "out/index.d.ts",
+  "types": "./out/index.d.ts",
   "scripts": {
     "build": "tsc && rollup -c",
     "lint": "eslint src/**/*.js",
