@@ -35,5 +35,6 @@
     "rollup": "^2.70.1",
     "rollup-plugin-import-assertions": "^0.3.0",
     "typescript": "^4.6.3"
-  }
+  },
+  "files": ["./dist/index.js", "./out/index.d.ts"]
 }
